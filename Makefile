@@ -44,7 +44,7 @@ clean-test-all: clean-test
 	rm -rf .tox/
 
 lint:
-	flake8 sub_query tests
+	flake8 sub_query
 
 test:
 	python manage.py test ${NOSE_FLAGS}

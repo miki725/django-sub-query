@@ -4,4 +4,5 @@ django-nose
 flake8
 mock
 nose
+psycopg2
 tox

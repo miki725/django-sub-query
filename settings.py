@@ -20,7 +20,6 @@ DATABASES = {
 MIDDLEWARE_CLASSES = ()
 
 INSTALLED_APPS = (
-    'django_extensions',
     'django_nose',
     'sub_query',
     'test_app',
