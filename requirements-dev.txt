@@ -1,7 +1,7 @@
 -r requirements.txt
 coverage
+django-nose
 flake8
 mock
 nose
-rednose
 tox

@@ -1,7 +1,7 @@
 .PHONY: clean-pyc clean-build docs clean
 
-NOSE_FLAGS=-sv --with-doctest --rednose
-COVER_CONFIG_FLAGS=--with-coverage --cover-package=sub_query,tests --cover-tests
+NOSE_FLAGS=-s --verbosity=2
+COVER_CONFIG_FLAGS=--with-coverage --cover-package=sub_query --cover-erase
 COVER_REPORT_FLAGS=--cover-html --cover-html-dir=htmlcov
 COVER_FLAGS=${COVER_CONFIG_FLAGS} ${COVER_REPORT_FLAGS}
 
@@ -47,15 +47,15 @@ lint:
 	flake8 sub_query tests
 
 test:
-	nosetests ${NOSE_FLAGS} tests/
+	python manage.py test ${NOSE_FLAGS}
 
 test-coverage:
-	nosetests ${NOSE_FLAGS} ${COVER_FLAGS} tests/
+	python manage.py test ${NOSE_FLAGS} ${COVER_FLAGS}
 
 test-all:
 	tox
 
-check: clean-build clean-pyc clean-test lint test-coverage
+check: clean-build clean-pyc clean-test lint test
 
 release: clean
 	python setup.py sdist upload

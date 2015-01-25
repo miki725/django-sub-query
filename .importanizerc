@@ -1,0 +1,20 @@
+{
+    "groups": [
+        {
+            "type": "stdlib"
+        },
+        {
+            "type": "remainder"
+        },
+        {
+            "type": "packages",
+            "packages": [
+                "sub_query",
+                "test_app"
+            ]
+        },
+        {
+            "type": "local"
+        }
+    ]
+}
